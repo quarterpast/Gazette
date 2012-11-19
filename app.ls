@@ -1,5 +1,7 @@
 {route,template,middleware} = require \duvet
-template.engines.html = compile(h,args): h
+hnd = require \handlebars
+template.base = \base
+template.engines.html = compile: (src,args)->hnd.compile src <| args
 template.folder = \templates
 port = process.env.PORT ? 8000
 
