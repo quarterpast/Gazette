@@ -1,1 +1,1 @@
-ko = require \knockout-browserify
+ko = require \knockout-client

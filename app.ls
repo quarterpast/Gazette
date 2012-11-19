@@ -1,6 +1,6 @@
 {route,template,middleware,{sync}:magic} = require \duvet
 {parser,uglify} = require \uglify-js
-require! {LiveScript,fs}
+require! {LiveScript,fs,stylus,nib}
 
 template.base = \base
 template.engines.html = require \handlebars
@@ -20,7 +20,7 @@ let @ = new route
 		|> uglify.ast_mangle
 		|> uglify.gen_code
 
-	@GET '/compiled/styles.css' ->
+	@GET '/compiled/style.css' ->
 		fs.read-file.sync null "stylus/main.styl" \utf8
 		|> stylus
 		|> (.set \compress yes)
