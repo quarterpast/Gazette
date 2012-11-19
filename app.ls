@@ -1,6 +1,6 @@
-{route,template,middleware} = require \duvet
+{route,template,middleware,{sync}:magic} = require \duvet
 {parser,uglify} = require \uglify-js
-require! LiveScript
+require! {LiveScript,fs}
 
 template.base = \base
 template.engines.html = require \handlebars
@@ -19,6 +19,14 @@ let @ = new route
 		|> parser.parse
 		|> uglify.ast_mangle
 		|> uglify.gen_code
+
+	@GET '/compiled/styles.css' ->
+		fs.read-file.sync null "stylus/main.styl" \utf8
+		|> stylus
+		|> (.set \compress yes)
+		|> (.use nib!)
+		|> (.import \nib)
+		|> (.render.sync it)
 
 
 	@listen port, ->console.log "listening on #port"
