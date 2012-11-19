@@ -3,7 +3,7 @@ template.engines.html = compile(h,args): h
 template.folder = \templates
 port = process.env.PORT ? 8000
 
-with route
+let @ = route
 	@GET '/' template.render \home
 	@GET '/static' middleware.static \res
 
