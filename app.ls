@@ -1,11 +1,11 @@
 {route,template,middleware} = require \duvet
 hnd = require \handlebars
 template.base = \base
-template.engines.html = compile: (src,args)->hnd.compile src <| args
+template.engines.html = hnd
 template.folder = \templates
 port = process.env.PORT ? 8000
 
-let @ = route
+let @ = new route
 	@GET '/' template.render \home
 	@GET '/static' middleware.static \res
 
