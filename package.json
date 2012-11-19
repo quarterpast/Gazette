@@ -1,0 +1,7 @@
+{
+  "name": "Gazette",
+  "version": "0.0.0",
+  "dependencies": {
+    "mailer": "~0.6.7"
+  }
+}
