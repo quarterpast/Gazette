@@ -1,0 +1,1 @@
+ko = require \knockout-browserify
