@@ -1,11 +1,51 @@
-@import "fonts.styl"
+@import "fonts"
+
+header-height = 90px
+footer-height = 50px
+
+html, body
+	height 100%
 
 body
+	background-image url(/static/bg.png)
+	background-size 50px 50px
+	margin 0
 	& > *
-		width 1200px
+		max-width 1400px
+		width 100%
 		margin 0px auto
 
 	& > header
+		border-bottom 4px #222 solid
+		height header-height
 		h1
 			margin 0
-			
+			font-family "Roboto Thin Italic"
+			font-size 5em
+			padding-left header-height
+			line-height header-height + 15px
+
+			background-image url(/static/logo.png)
+			background-repeat no-repeat
+			background-size (header-height - 10px) (header-height - 10px)
+			background-position left 5px
+		nav
+			float right
+			ul
+				margin 0
+				padding 0
+				width 400px
+
+				li
+					display inline-block
+					height (header-height / 2)
+					line-height (header-height / 2)
+					width 200px
+
+	& > section
+		min-height -webkit-calc(100% \- header-height \- footer-height \- 10px)
+
+	& > footer
+		height footer-height
+		line-height footer-height
+		border-top 2px #222 solid
