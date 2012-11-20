@@ -1,0 +1,44 @@
+columns = 12
+gutter = 20px
+
+.columns
+.column
+	box-sizing border-box
+	padding-right gutter
+	float left
+	clearfix()
+.right
+	float right
+
+.one
+	width (100/columns)%
+.two
+	width (200/columns)%
+.three
+	width (300/columns)%
+.four
+	width (400/columns)%
+.five
+	width (500/columns)%
+.six
+	width (600/columns)%
+.seven
+	width (700/columns)%
+.eight
+	width (800/columns)%
+.nine
+	width (900/columns)%
+.ten
+	width (1000/columns)%
+.eleven
+	width (1100/columns)%
+.twelve
+	width (1200/columns)%
+
+@media (max-width: 1023px)
+	.columns
+	.column
+		float none
+		display block
+		width auto
+		margin 0
