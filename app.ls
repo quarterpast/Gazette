@@ -14,6 +14,8 @@ let @ = new route
 	@GET "/subscriptions" template.render \dash
 	@GET "/subscriptions/:id" template.render \dash
 
+	@GET "/favicon.ico" middleware.static \res/favicon.png
+
 	@GET '/compiled/app.min.js' ->let @ = do require \browserify
 		@register \ls LiveScript.compile _,{+bare}
 		@add-entry "client/main.ls"
