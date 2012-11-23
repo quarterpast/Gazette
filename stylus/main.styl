@@ -20,6 +20,7 @@ body
 
 	& > header
 		border-bottom 4px #222 solid
+		margin-bottom -(header-height + 4px)
 		height header-height
 		h1
 			margin 0
@@ -39,10 +40,13 @@ body
 				margin (header-height/2 - 12px) 0
 
 	& > section
-		min-height -webkit-calc(100% \- header-height \- footer-height \- 10px)
+		clearfix()
+		box-sizing border-box
+		padding-top header-height + 4px
+		min-height 100%
 
 	& > footer
+		margin-top -(footer-height + 6px)
 		height footer-height
 		line-height footer-height
 		border-top 2px #222 solid
-
