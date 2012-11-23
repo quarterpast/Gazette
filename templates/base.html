@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 		<link rel="stylesheet" href="/compiled/style.css">
 		<script src="/compiled/app.min.js"></script>
-		<title>Gazette &#x00A4; {{title}}</title>
+		<title>Kindle Gazette {{#if title}}&bull; {{title}}{{/if}}</title>
 	</head>
 	<body>
 		<header>
@@ -13,7 +13,7 @@
 				<input type="text" name="email" placeholder="Email address">
 				<input type="submit" value="Log in" title="or sign up">
 			</form>
-			<h1>Gazette</h1>
+			<h1>Kindle Gazette</h1>
 		</header>
 		<section class="main">
 			{{{body}}}
